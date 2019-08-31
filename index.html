@@ -32,12 +32,15 @@
                 </li>
             </ul>
         </nav>
-        <form action="" class="landingPage__container">
-            <input type="text" placeholder="Destination" name="" id=""/>
+        
+        <form action="/html/search.html" class="landingPage__container">
+            <div id="geocoder" class="geocoder"></div>
             <input type="text" placeholder="Arriving" name="" id=""/>
             <input type="text" placeholder="Departing" name="" id=""/>
-            <input type="submit" value="Search" placeholder="Search" name="" id=""/>
+            <input type="submit" value="Search" placeholder="Search" name="" id="search"/>
         </form>
+        
+        <div style="display: none" id="map"></div>
     </header>
 
     <script src="js/landingPage.js"></script>

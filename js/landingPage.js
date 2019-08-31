@@ -21,4 +21,10 @@ geocoder.on('result', function(e){
     sessionStorage.setItem('location', e.result.place_name)
 })
 
+// let search = document.getElementById('search');
+// search.addEventListener('click', function(){
+//     console.log('click')
+//     window.location.href='https://www.google.com'
+// })
+
 document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
