@@ -1,0 +1,22 @@
+.navbar{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding: 0 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+   
+    &__logo{
+        font-size: 3rem;
+        letter-spacing: 0.5rem;
+        font-weight: 100;
+    }
+    &__list{
+        display: flex;
+        list-style-type: none;
+        font-size: 1.5rem;
+        
+    }
+
+}
