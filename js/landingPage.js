@@ -1,4 +1,4 @@
-
+console.log('test:1:10 PM')
 sessionStorage.clear();
 if (sessionStorage.getItem('location') === null) {
     sessionStorage.setItem('location', '95123')
