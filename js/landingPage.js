@@ -14,7 +14,8 @@ var map = new mapboxgl.Map({
 
 var geocoder = new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
-    mapboxgl: mapboxgl
+    mapboxgl: mapboxgl,
+    placeholder: "Destination"
 });
 
 geocoder.on('result', function(e){
