@@ -37,4 +37,14 @@
       //1900px
     }
   }
-  
+  @mixin box {
+    height: 5vh;
+    background-color: rgba($secondaryBGColor, 0.85);
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    @media screen and (max-height: 50rem){
+        height: 4rem;
+    }
+}

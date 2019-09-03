@@ -1,0 +1,6 @@
+// one page 
+.container{
+    display: grid;
+    grid-template-columns: 1fr 20rem;
+    grid-template-rows: 10rem auto;
+}

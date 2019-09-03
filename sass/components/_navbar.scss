@@ -1,25 +1,103 @@
-.navbar{
-    grid-column: 1/2;
+.navbar {
     grid-row: 1/2;
-    padding: 0 2.5rem;
+    grid-column: 1/3;
+    color: $secondaryFontColor;
+    text-transform: uppercase;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    text-transform: uppercase;
-   
-    &__logo{
-        font-size: 3rem;
-        letter-spacing: 0.5rem;
-        font-weight: 100;
+    padding: 0 2rem;
+    &__logo {
+      font-size: $logoFontSize;
+      letter-spacing: 0.3rem;
+      font-weight: 100;
+      a{
+          color: inherit;
+          &:link{
+              color: inherit;
+          }
+      }
     }
-    &__list{
-        display: flex;
-        list-style-type: none;
-        font-size: 1.5rem;
-        
+    &__links {
+      font-size: $linkFontSize;
+      display: flex;
+      align-items: center;
+      li:nth-child(1){
+        @include respond(phone){
+          display: none;
+        }
+      }
+      li:nth-child(2){
+        z-index: 999;
+      }
+      &-link {
+        div {
+          height: 0.1rem;
+          width: 2rem;
+          background-color: $secondaryFontColor;
+          @include respond(tab-land){
+            height: 0.15rem;
+          }
+        }
+        div:not(:last-child) {
+          margin-bottom: 0.5rem;
+        }
+        cursor: pointer;
+        &:not(:last-child) {
+          margin-right: 2rem;
+        }
+      }
     }
-
-}
-.navbar-bc-main{
-    background-color: $mainColor;
-}
+    .dummytext{
+      display: none;
+      @include respond(phone){
+        display: inherit;
+      }
+    }
+  }
+  .navMenu {
+    height: 100vh;
+    width: 20vw;
+    background-color: $secondaryBGColor;
+    position: fixed;
+    right: -1000rem;
+    transition: all 0.2s ease;
+    z-index: 100;
+    @include respond(tab-port){
+      right: 0;
+      top: -1000rem;
+      width: 100vw;
+    }
+    &__links {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      color: $mainFontColor;
+      padding: 2rem 0;
+      font-size: $linkFontSize;
+      text-transform: uppercase;
+      li:last-child{
+        display: none;
+        @include respond(phone){
+          display: inherit;
+        }
+      }
+      a{
+        color: inherit;
+        &:link{
+          color: inherit;
+        }
+      }
+    }
+  }
+  .navmenu-active {
+    right: 0;
+    display: inherit;
+    @include respond(tab-port){
+      top: 0;
+    }
+  }
+  .search{
+      background-color: $mainBGColor;
+  }

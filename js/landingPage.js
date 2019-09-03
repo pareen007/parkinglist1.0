@@ -1,4 +1,4 @@
-console.log('test:1:18 PM')
+console.log('test:3:18 PM')
 sessionStorage.clear();
 if (sessionStorage.getItem('location') === null) {
     sessionStorage.setItem('location', '95123')
@@ -20,11 +20,5 @@ var geocoder = new MapboxGeocoder({
 geocoder.on('result', function(e){
     sessionStorage.setItem('location', e.result.place_name)
 })
-
-// let search = document.getElementById('search');
-// search.addEventListener('click', function(){
-//     console.log('click')
-//     window.location.href='https://www.google.com'
-// })
 
 document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
