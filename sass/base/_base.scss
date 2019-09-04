@@ -1,15 +1,4 @@
 
-.geocoder {
-  @include box;
-  grid-column: 1/3;
-  grid-row: 1/2;
-}
-.mapboxgl-ctrl-geocoder { min-width:100%; }
-
-.searchPage__map{
-  height: 100vh;
-  z-index: 1;
-}
 * {
   padding: 0;
   margin: 0;
@@ -69,4 +58,17 @@ input[type="submit"]{
 
 input[type="text"]::placeholder{
     color: $mainFontColor;
+}
+
+.geocoder {
+  @include box;
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+.mapboxgl-ctrl-geocoder { min-width:100%; }
+
+.searchPage__map{
+  z-index: 1;
+  height: calc(100vh - 10rem);
+  grid-column: 1/3;
 }
