@@ -1,17 +1,18 @@
 console.log('test:3:18 PM')
+// temp solution for null search bar
 sessionStorage.clear();
-if (sessionStorage.getItem('location') === null) {
-    sessionStorage.setItem('location', '95123')
+if (sessionStorage.getItem('address') === null) {
+    sessionStorage.setItem('address', '95123')
 }
 
-////////////////
-mapboxgl.accessToken = 'pk.eyJ1IjoicGFyZWVuODkiLCJhIjoiY2p6bXlrb3F0MGQwOTNwczZkNDR1M2V0biJ9.wnH7WAPDltqrQmWTmTrbLg';
+// Mapbox map // Didn't know how to use the search bar without map so its included just have the display to none.
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
 });
 //////////////////
 
+// 
 var geocoder = new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
     mapboxgl: mapboxgl,
@@ -19,7 +20,8 @@ var geocoder = new MapboxGeocoder({
 });
 
 geocoder.on('result', function(e){
-    sessionStorage.setItem('location', e.result.place_name)
+    sessionStorage.setItem('address', e.result.place_name)
+    sessionStorage.setItem('lat', e.result.center[0])
+    sessionStorage.setItem('long', e.result.center[1])
 })
-
 document.getElementById('geocoder').appendChild(geocoder.onAdd(map));

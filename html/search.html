@@ -5,19 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" type="image/x-icon" href="/assets/parking.ico" />
-    <script src="https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js"></script>
+    <!-- <script src="https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js"></script>
     <link
       href="https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.css"
       rel="stylesheet"
+    /> -->
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css"
+      type="text/css"
     />
     <link rel="stylesheet" href="../css/main.min.css" />
     <title>ParkingList</title>
   </head>
   <body>
-    <section class="container searchPage">
-      <nav class="search navbar">
+    <section class="container">
+      <nav class="mainBG navbar">
         <div class="dummytext"></div>
-        <h1 class="navbar__logo"><a class="sc" href="../index.html">parkinglist</a></h1>
+        <h1 class="navbar__logo">
+          <a class="sc" href="../index.html">parkinglist</a>
+        </h1>
         <ul class="navbar__links">
           <li class="navbar__links-link">sign in</li>
           <li id="menu" class="navbar__links-link">
@@ -36,8 +49,31 @@
           <li class="navMenu__links-link nd1"><a href="">sign in</a></li>
         </ul>
       </div>
-      <div class="searchPage__map" id="map"></div>
+      <div class="searchPage">
+        <div class="searchPage__search">
+            <div id="geocoder" class="searchPage__search-geocoder"></div>
+        </div>
+        <form action="" class="searchPage__form">
+            <input class="searchPage__form-input"readonly="readonly" placeholder="arriving" type="text" name="" id="" class="landingPage__search-input">
+            <input class="searchPage__form-input"readonly="readonly" placeholder="departing" type="text" name="" id="" class="landingPage__search-input">
+            <input class="searchPage__form-input"type="submit" value="Update" class="landingPage__search-input">
+            <div class="searchPage__form-sort">
+                Sort By:
+                <select>
+                    <option value="volvo">Price</option>
+                    <option value="saab">Distance</option>
+                </select>
+            </div>
+        </form>
+        <div class="searchPage__result">
+          <div class="searchPage__result-container">
+
+          </div>
+        </div>
+        <div class="searchPage__map" id="map"></div>
+      </div>
     </section>
+
     <script src="../js/main.js"></script>
     <script src="../js/search.js"></script>
   </body>

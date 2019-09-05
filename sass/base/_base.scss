@@ -37,7 +37,7 @@ ul{
 }
 input[type="text"],
 input[type="submit"]{
-    @include box
+    @include box;
 }
 input[type="text"]{
     border: 0.1rem solid $secondaryBGColor;
@@ -47,6 +47,7 @@ input[type="text"]{
     }
 }
 input[type="submit"]{
+    cursor: pointer;
     border: 0.1rem solid $secondaryBGColor;
     &:focus{
         outline: none;
@@ -56,8 +57,10 @@ input[type="submit"]{
     }
 }
 
-input[type="text"]::placeholder{
-    color: $mainFontColor;
+
+input::placeholder{
+  color: $mainFontColor;
+  opacity: 1;
 }
 
 .geocoder {
@@ -67,8 +70,3 @@ input[type="text"]::placeholder{
 }
 .mapboxgl-ctrl-geocoder { min-width:100%; }
 
-.searchPage__map{
-  z-index: 1;
-  height: calc(100vh - 10rem);
-  grid-column: 1/3;
-}
