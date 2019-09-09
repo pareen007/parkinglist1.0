@@ -23,13 +23,15 @@
     <header class="container landingPage">
       <nav class="navbar">
         <div class="dummytext"></div>
-        <h1 class="navbar__logo"><a class="sc" href="./index.html">parkinglist</a></h1>
+        <h1 class="navbar__logo">
+          <a class="sc" href="./index.html">parkinglist</a>
+        </h1>
         <ul class="navbar__links">
           <li class="navbar__links-link">sign in</li>
           <li id="menu" class="navbar__links-link">
-            <div class="menulink" ></div>
-            <div class="menulink" ></div>
-            <div class="menulink" ></div>
+            <div class="menulink"></div>
+            <div class="menulink"></div>
+            <div class="menulink"></div>
           </li>
         </ul>
       </nav>
@@ -44,9 +46,23 @@
       </div>
       <form action="./html/search.html" class="landingPage__search">
         <div id="geocoder" class="geocoder"></div>
-        <input readonly="readonly" placeholder="arriving" type="text" name="" id="" class="landingPage__search-input">
-        <input readonly="readonly" placeholder="departing" type="text" name="" id="" class="landingPage__search-input">
-        <input type="submit" value="Search" class="landingPage__search-input">
+        <input
+          readonly="readonly"
+          placeholder="arriving"
+          type="text"
+          name=""
+          id=""
+          class="landingPage__search-input"
+        />
+        <input
+          readonly="readonly"
+          placeholder="departing"
+          type="text"
+          name=""
+          id=""
+          class="landingPage__search-input"
+        />
+        <input type="submit" value="Search" class="landingPage__search-input" />
       </form>
       <div style="display: none" id="map"></div>
     </header>

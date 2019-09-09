@@ -51,28 +51,50 @@
       </div>
       <div class="searchPage">
         <div class="searchPage__search">
-            <div id="geocoder" class="searchPage__search-geocoder"></div>
+          <div id="geocoder" class="searchPage__search-geocoder"></div>
         </div>
         <form action="" class="searchPage__form">
-            <input class="searchPage__form-input"readonly="readonly" placeholder="arriving" type="text" name="" id="" class="landingPage__search-input">
-            <input class="searchPage__form-input"readonly="readonly" placeholder="departing" type="text" name="" id="" class="landingPage__search-input">
-            <input class="searchPage__form-input"type="submit" value="Update" class="landingPage__search-input">
-            <div class="searchPage__form-sort">
-                Sort By:
-                <select>
-                    <option value="volvo">Price</option>
-                    <option value="saab">Distance</option>
-                </select>
-            </div>
-        </form>
-        <div class="searchPage__result">
-          <div class="searchPage__result-container">
-
+          <input
+            class="searchPage__form-input"
+            readonly="readonly"
+            placeholder="arriving"
+            type="text"
+            name=""
+            id=""
+            class="landingPage__search-input"
+          />
+          <input
+            class="searchPage__form-input"
+            readonly="readonly"
+            placeholder="departing"
+            type="text"
+            name=""
+            id=""
+            class="landingPage__search-input"
+          />
+          <input
+            class="searchPage__form-input"
+            type="submit"
+            value="Update"
+            class="landingPage__search-input"
+          />
+          <div class="searchPage__form-sort">
+            Sort By:
+            <select>
+              <option value="volvo">Price</option>
+              <option value="saab">Distance</option>
+            </select>
           </div>
+        </form>
+        <div class="searchPage__result" id="result">
+          <div class="searchPage__result-container"></div>
         </div>
         <div class="searchPage__map" id="map"></div>
       </div>
     </section>
+    <button id="button">Button</button>
+    <div id="user">
+    </div>
 
     <script src="../js/main.js"></script>
     <script src="../js/search.js"></script>

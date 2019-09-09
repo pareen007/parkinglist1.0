@@ -28,18 +28,40 @@
 //   }
 // }
 
-
 let geocoder = new MapboxGeocoder({
   accessToken: mapboxgl.accessToken,
   mapboxgl: mapboxgl,
-  placeholder: sessionStorage.getItem('address'),
-})
-
+  placeholder: sessionStorage.getItem("address")
+});
 let map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/mapbox/streets-v11',
-  center: [sessionStorage.getItem('lat'), sessionStorage.getItem('long')],
+  container: "map",
+  style: "mapbox://styles/mapbox/streets-v11",
+  center: [sessionStorage.getItem("lat"), sessionStorage.getItem("long")],
   zoom: 15
-})
+});
+var marker = new mapboxgl.Marker()
+  .setLngLat([sessionStorage.getItem("lat"), sessionStorage.getItem("long")])
+  .addTo(map);
 
-document.getElementById('geocoder').appendChild(geocoder.onAdd(map))
+document.getElementById("geocoder").appendChild(geocoder.onAdd(map));
+
+let parkAPI = 'https://developer.nps.gov/api/v1/parks&stateCode=ca&limit=10?api_key=W2Xxon77z2n4fIwwytQO7Trshnhvv2fpIdFPSxX1'
+
+document.getElementById('button').addEventListener('click', loadPark)
+
+function loadPark(){
+  var xhr = new XMLHttpRequest()
+  xhr.open('GET', parkAPI, true);
+  xhr.onload = function(){
+    if(this.status === 200){
+      let parks = JSON.parse(this.responseText)
+      console.log(parks)
+      let output = ''
+      for (let i = 0; i < parks.data.length; i++) {
+        output += `<div class="searchPage__result-container">${parks.data[i].description}</div>`
+      }
+      document.getElementById('result').innerHTML = output
+    }
+  }
+  xhr.send();
+}
