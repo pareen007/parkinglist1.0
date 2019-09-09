@@ -27,6 +27,8 @@
 //     icon.addTo(map);
 //   }
 // }
+mapboxgl.accessToken =
+  "pk.eyJ1IjoicGFyZWVuODkiLCJhIjoiY2p6bXlrb3F0MGQwOTNwczZkNDR1M2V0biJ9.wnH7WAPDltqrQmWTmTrbLg";
 
 let geocoder = new MapboxGeocoder({
   accessToken: mapboxgl.accessToken,

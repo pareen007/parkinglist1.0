@@ -1,3 +1,5 @@
+mapboxgl.accessToken =
+  "pk.eyJ1IjoicGFyZWVuODkiLCJhIjoiY2p6bXlrb3F0MGQwOTNwczZkNDR1M2V0biJ9.wnH7WAPDltqrQmWTmTrbLg";
 console.log('test:3:18 PM')
 // temp solution for null search bar
 sessionStorage.clear();
