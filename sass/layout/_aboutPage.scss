@@ -1,112 +1,113 @@
-.about{
-    grid-column: 1/3;
-    grid-row: 2/3;
+.about {
+  grid-column: 1/3;
+  grid-row: 2/3;
+  width: 100vw;
+  &__intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 90vh;
+    background-color: $secondaryBGColor;
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+    }
+    &-left {
+      padding: 0 10rem;
+      grid-column: 1/2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      @include respond(tab-land) {
+        padding: 0 5rem;
+      }
+      @include respond(tab-port) {
+        padding: 0 2rem;
+      }
+      @include respond(phone) {
+        display: none;
+      }
+    }
+    &-right {
+      grid-column: 2/3;
+      background-image: url("./../assets/images/about.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      clip-path: polygon(100% 0, 100% 50%, 100% 100%, 15% 100%, 0 49%, 15% 0);
+      @include respond(tab-port) {
+        clip-path: none;
+      }
+      @include respond(phone) {
+        grid-column: 1/2;
+        background-image: linear-gradient(
+            to right,
+            rgba($secondaryBGColor, 0.9),
+            rgba($secondaryBGColor, 0.9)
+          ),
+          url("./../assets/images/about.png");
+      }
+      div {
+        display: none;
+        @include respond(phone) {
+          height: 100%;
+          width: 100%;
+          display: inherit;
+          padding: 5rem 2rem;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          justify-content: space-between;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+  &__divider {
+    height: 20vh;
     width: 100vw;
-    &__intro{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-        height: 90vh;
-        background-color: $secondaryBGColor;
-        @include respond(phone){
-            grid-template-columns: 1fr;
-        }
-        &-left{
-            padding: 0 10rem;
-            grid-column: 1/2;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            @include respond(tab-land){
-                padding: 0 5rem;
-            }
-            @include respond(tab-port){
-                padding: 0 2rem;
-            }
-            @include respond(phone){
-                display: none;
-            }
-        }
-        &-right{
-            grid-column: 2/3;
-            background-image: url('../../assets/images/about.png');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            clip-path: polygon(100% 0, 100% 50%, 100% 100%, 15% 100%, 0 49%, 15% 0);
-            @include respond(tab-port){
-                clip-path: none;
-            }
-            @include respond(phone){
-                grid-column: 1/2;
-                background-image: linear-gradient(
-                    to right,
-                    rgba($secondaryBGColor, 0.9),
-                    rgba($secondaryBGColor, 0.9)
-                  ),
-                  url("../../assets/images/about.png");
-            }
-            div {
-                display: none;
-                @include respond(phone){
-                    height: 100%;
-                    width: 100%;
-                    display: inherit;
-                    padding: 5rem 2rem;
-                    display: flex;
-                    flex-direction: column;
-                    text-align: center;
-                    justify-content: space-between;
-                    overflow: hidden;
-                }
-            }
-        }
+    background-color: $mainBGColor;
+  }
+  &__vision {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    @include respond(tab-port) {
+      grid-template-columns: 1fr;
     }
-    &__divider{
-        height: 20vh;
-        width: 100vw;
-        background-color: $mainBGColor;
+    &-left {
+      padding: 10rem;
+      grid-column: 1/2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      @include respond(tab-land) {
+        padding: 5rem;
+      }
+      @include respond(tab-port) {
+        text-align: center;
+      }
+      @include respond(phone) {
+        padding: 2rem;
+      }
     }
-    &__vision{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-        @include respond(tab-port){
-            grid-template-columns: 1fr;
-        }
-        &-left{
-            padding:10rem;
-            grid-column: 1/2;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            @include respond(tab-land){
-                padding:5rem;
-            }
-            @include respond(tab-port){
-                text-align: center;
-            }
-            @include respond(phone){
-                padding:2rem;
-            }
-        }
-        &-right{
-            background-color: lighten($color: $mainBGColor, $amount: 50);
-        }
+    &-right {
+      background-color: lighten($color: $mainBGColor, $amount: 50);
     }
-    h1{
-        font-size: 4rem;
-        text-transform: capitalize;
-        padding-bottom: 5rem;
-        letter-spacing: 0.2rem;
-    }
-    p{
-        font-size: 2rem;
-        line-height: 3rem;
-        letter-spacing: 0.1rem;
-    }
-    span{
-        font-size: 4rem;
-        color: $secondaryBGColor;
-    }
+  }
+  h1 {
+    font-size: 4rem;
+    text-transform: capitalize;
+    padding-bottom: 5rem;
+    letter-spacing: 0.2rem;
+  }
+  p {
+    font-size: 2rem;
+    line-height: 3rem;
+    letter-spacing: 0.1rem;
+  }
+  span {
+    font-size: 4rem;
+    color: $secondaryBGColor;
+  }
 }
+
