@@ -1,0 +1,112 @@
+.footer {
+  padding: 8rem 10rem 0rem 10rem;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  row-gap: 5rem;
+  border-top: 0.2rem solid $mainBGColor;
+  @include respond(phone) {
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 8rem 0 0 0;
+
+  }
+  h1 {
+    font-size: 2.5rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    align-self: center;
+    @include respond(phone) {
+      justify-self: center;
+      grid-column: 1/3;
+
+    }
+  }
+  h2 {
+    align-self: center;
+    justify-self: end;
+    font-size: 2.5rem;
+    white-space: nowrap;
+    @include respond(phone) {
+      justify-self: center;
+      grid-row: 3/4;
+      grid-column: 1/3;
+    }
+  }
+
+  &__mid-left {
+    align-self: center;
+    @include respond(phone) {
+      justify-self: center;
+      grid-column: 1/3;
+    }
+    ul {
+      display: flex;
+      justify-content: start;
+      li {
+        font-size: 4rem;
+        &:not(:last-child) {
+          padding-right: 4.5rem;
+        }
+      }
+    }
+  }
+  &__mid-right {
+    align-items: center;
+    justify-self: end;
+    @include respond(phone) {
+      justify-self: center;
+      grid-column: 1/3;
+    }
+    form {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+    }
+    input {
+      border: solid 0.1rem $mainBGColor;
+      font-size: 1rem;
+    }
+    input[type="submit"] {
+      padding: 0 2rem;
+    }
+  }
+  &__bottom-left {
+    border-top: 0.2rem solid $mainBGColor;
+    display: grid;
+    p {
+      align-self: center;
+      @include respond(phone){
+          justify-self: center;
+      }
+    }
+    @include respond(phone){
+        grid-column: 1/3;
+    }
+  }
+  &__bottom-right {
+    display: grid;
+    border-top: 0.2rem solid $mainBGColor;
+    ul {
+      align-self: center;
+      display: flex;
+      text-transform: uppercase;
+      justify-content: space-between;
+      li{
+          white-space: nowrap;
+      }
+    }
+    @include respond(phone){
+        display: none;
+    }
+  }
+  a {
+    color: $mainFontColor;
+    &:link {
+      color: $mainBGColor;
+    }
+  }
+  p {
+    letter-spacing: 0.1rem;
+  }
+}
