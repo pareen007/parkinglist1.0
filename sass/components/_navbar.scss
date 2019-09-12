@@ -32,6 +32,12 @@
         z-index: 999;
       }
       &-link {
+        a{
+          color: $secondaryFontColor;
+          &:link{
+            color: $secondaryFontColor;
+          }
+        }
         div {
           height: 0.1rem;
           width: 2rem;
