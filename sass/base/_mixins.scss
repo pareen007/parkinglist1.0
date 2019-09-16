@@ -29,7 +29,7 @@
   
       //1900px
     }
-    @if $breakpoint==bigger-screen {
+    @if $breakpoint==biggest-screen {
       @media only screen and (min-width: 200em) {
         @content;
       }

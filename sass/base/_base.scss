@@ -36,7 +36,9 @@ ul{
     list-style-type: none;
 }
 input[type="text"],
-input[type="submit"]{
+input[type="submit"],
+input[type="password"],
+button{
     @include box;
 }
 input[type="text"]{
