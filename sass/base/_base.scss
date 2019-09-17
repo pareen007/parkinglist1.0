@@ -38,7 +38,8 @@ ul{
 input[type="text"],
 input[type="submit"],
 input[type="password"],
-button{
+button,
+textarea{
     @include box;
 }
 input[type="text"]{
@@ -60,7 +61,8 @@ input[type="submit"]{
 }
 
 
-input::placeholder{
+input::placeholder,
+textarea::placeholder{
   color: $mainFontColor;
   opacity: 1;
 }
